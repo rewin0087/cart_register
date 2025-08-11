@@ -18,10 +18,10 @@
             <td class="py-2 px-4 border-b">
               <p><%= number_to_currency(item.product.price) %></p>
               <%- if item.discount_value && item.promo_code %>
-                <span class="text-green-500 ml-2">
-                  <%= item.description %>
+                <span class="text-green-500">
+                  Applied Discount: <%= item.description %>
                 </span>
-                <span class="text-red-500 ml-2"><%= number_to_currency(item.discount_value) %></span>
+                <span class="text-red-500"><%= number_to_currency(item.discount_value) %></span>
               <% end %>
               </td>
             <td class="py-2 px-4 border-b"><%= item.quantity %></td>
