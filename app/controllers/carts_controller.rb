@@ -1,8 +1,9 @@
 class CartsController < ApplicationController
-  before_action :find_cart, only: [:show]
-
   def show
+    @cart = Cart.find(params[:id])
     @cart.apply_promo
+  rescue ActiveRecord::RecordNotFound
+    render html: 'Cart not found', status: :not_found
   end
 
   def add_product
@@ -15,15 +16,7 @@ class CartsController < ApplicationController
         format.turbo_stream
       end
     else
-      render text: 'Product not found', status: :not_found
+      render html: 'Product not found', status: :not_found
     end
-  end
-
-  private
-
-  def find_cart
-    @cart = Cart.find(params[:id])
-  rescue ActiveRecord::RecordNotFound
-    render text: 'Cart not found', status: :not_found
   end
 end

@@ -20,6 +20,10 @@ class Cart < ApplicationRecord
     cart_items.sum(:price)
   end
 
+  def item_count
+    cart_items.sum(:quantity)
+  end
+
   def apply_promo
     Cart::ApplyPromo.new(self).call
   end
