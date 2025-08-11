@@ -19,6 +19,12 @@
   </head>
 
   <body>
+    <header class="w-full fixed top-0 left-0 bg-white shadow z-10">
+      <nav class="container mx-auto px-5 py-4 flex justify-between items-center">
+        <%= link_to "Home", root_path, class: "text-xl font-bold text-blue-700 hover:text-blue-900" %>
+        <%= link_to "Cart", cart_path(@cart.id), class: "text-lg font-medium text-gray-700 hover:text-blue-700" %>
+      </nav>
+    </header>
     <main class="container mx-auto mt-28 px-5 flex">
       <%= yield %>
     </main>
