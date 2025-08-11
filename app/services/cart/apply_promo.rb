@@ -36,7 +36,7 @@ class Cart::ApplyPromo
         discounted_item_count = item.quantity / min_item
         original_item_count = item.quantity % min_item
 
-        discounted_price = (discounted_item_count + original_item_count) * promo.discount_value
+        discounted_price = (discounted_item_count * promo.discount_value) + (original_item_count * item.product.price)
         item.update(price: discounted_price, promo_code: promo.code)
       end
     else
