@@ -41,7 +41,6 @@ Things we are going to look into or ask about
 
 ●	Flexible structure that can be easily adapted for future changes 
 ● To make some changes to the code.
-<img width="442" height="655" alt="image" src="https://github.com/user-attachments/assets/8094f44f-b10d-48c4-8afe-f14a43348342" />
 
 ## Setup & Start app
 ```
