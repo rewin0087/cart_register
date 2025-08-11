@@ -1,0 +1,48 @@
+<div class="container mx-auto mt-10 px-4">
+  <h2 class="text-2xl font-bold mb-6">Your Cart</h2>
+  <% if @cart.cart_items.any? %>
+    <table class="min-w-full bg-white rounded shadow mb-6">
+      <thead>
+        <tr>
+          <th class="py-2 px-4 border-b text-left">Product</th>
+          <th class="py-2 px-4 border-b text-left">Price</th>
+          <th class="py-2 px-4 border-b text-left">Quantity</th>
+          <th class="py-2 px-4 border-b text-left">Sub Total</th>
+          <th class="py-2 px-4 border-b text-left">Final Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @cart.cart_items.each do |item| %>
+          <tr>
+            <td class="py-2 px-4 border-b"><%= item.product.name %></td>
+            <td class="py-2 px-4 border-b">
+              <p><%= number_to_currency(item.product.price) %></p>
+              <%- if item.discount_value && item.promo_code %>
+                <span class="text-green-500 ml-2">
+                  <%= item.description %>
+                </span>
+                <span class="text-red-500 ml-2"><%= number_to_currency(item.discount_value) %></span>
+              <% end %>
+              </td>
+            <td class="py-2 px-4 border-b"><%= item.quantity %></td>
+            <td class="py-2 px-4 border-b"><%= number_to_currency(item.product.price * item.quantity) %></td>
+            <td class="py-2 px-4 border-b">
+              <span class="text-green-500 ml-2">
+                <%= number_to_currency(item.price) %>
+              </span>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="4" class="py-2 px-4 border-b text-right font-bold">Grand Total:</td>
+          <td colspan="2" class="py-2 px-4 border-b">
+            <span class="text-blue-600 font-semibold"><%= number_to_currency(@cart.total_price) %></span>
+          </td>
+        </tr>
+    </table>
+  <% else %>
+    <p class="text-gray-600">Your cart is empty.</p>
+  <% end %>
+</div>

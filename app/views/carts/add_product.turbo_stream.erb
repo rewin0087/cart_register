@@ -1,0 +1,9 @@
+<turbo-stream action="replace" target="cart-notice">
+  <template>
+    <div id="cart-notice" class="mb-10 top-5 right-5 bg-green-500 text-white px-4 py-2 rounded shadow">
+      <div class="grid grid-cols-1">
+        <p>Product added to cart!: <%= @product.name %> x <%= params[:quantity] %></p>
+      </div>
+    </div>
+  </template>
+</turbo-stream>

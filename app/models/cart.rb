@@ -4,13 +4,23 @@ class Cart < ApplicationRecord
 
   validates :session_id, presence: true, uniqueness: true
 
-  def add_product(product)
+  def add_product(product, quantity = nil)
     cart_item = cart_items.find_or_initialize_by(product_id: product.id)
-    cart_item.quantity += 1
+
+    if quantity
+      cart_item.quantity += quantity.to_i
+    else
+      cart_item.quantity += 1
+    end
+
     cart_item.save
   end
 
-  def checkout
-    Cart::Checkout.call(self)
+  def total_price
+    cart_items.sum(:price)
+  end
+
+  def apply_promo
+    Cart::ApplyPromo.new(self).call
   end
 end

@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  resources :carts, only: [:create, :show] do
-    post 'add_product', on: :member
+  resources :carts, only: [:show] do
+    post 'add_product', on: :collection, to: 'carts#add_product'
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
