@@ -16,19 +16,19 @@
           <tr>
             <td class="py-2 px-4 border-b"><%= item.product.name %></td>
             <td class="py-2 px-4 border-b">
-              <p><%= number_to_currency(item.product.price) %></p>
+              <p><%= number_to_currency(item.product.price, unit: '€') %></p>
               <%- if item.discount_value && item.promo_code %>
                 <span class="text-green-500">
                   Applied Discount: <%= item.description %>
                 </span>
-                <span class="text-red-500"><%= number_to_currency(item.discount_value) %></span>
+                <span class="text-red-500"><%= number_to_currency(item.discount_value, unit: '€') %></span>
               <% end %>
               </td>
             <td class="py-2 px-4 border-b"><%= item.quantity %></td>
-            <td class="py-2 px-4 border-b"><%= number_to_currency(item.product.price * item.quantity) %></td>
+            <td class="py-2 px-4 border-b"><%= number_to_currency(item.product.price * item.quantity, unit: '€') %></td>
             <td class="py-2 px-4 border-b">
               <span class="text-green-500 ml-2">
-                <%= number_to_currency(item.price) %>
+                <%= number_to_currency(item.price, unit: '€') %>
               </span>
             </td>
           </tr>
@@ -38,7 +38,7 @@
         <tr>
           <td colspan="4" class="py-2 px-4 border-b text-right font-bold">Grand Total:</td>
           <td colspan="2" class="py-2 px-4 border-b">
-            <span class="text-blue-600 font-semibold"><%= number_to_currency(@cart.total_price) %></span>
+            <span class="text-blue-600 font-semibold"><%= number_to_currency(@cart.total_price, unit: '€') %></span>
           </td>
         </tr>
     </table>
