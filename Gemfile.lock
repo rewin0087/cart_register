@@ -104,6 +104,8 @@ GEM
     drb (2.2.3)
     erb (5.0.2)
     erubi (1.13.1)
+    foreman (0.90.0)
+      thor (~> 1.4)
     globalid (1.2.1)
       activesupport (>= 6.1)
     i18n (1.14.7)
@@ -152,6 +154,8 @@ GEM
       mini_portile2 (~> 2.8.2)
       racc (~> 1.4)
     nokogiri (1.18.9-aarch64-linux-gnu)
+      racc (~> 1.4)
+    nokogiri (1.18.9-arm64-darwin)
       racc (~> 1.4)
     nokogiri (1.18.9-x86_64-linux-gnu)
       racc (~> 1.4)
@@ -287,6 +291,7 @@ GEM
       tailwindcss-ruby (~> 4.0)
     tailwindcss-ruby (4.1.11)
     tailwindcss-ruby (4.1.11-aarch64-linux-gnu)
+    tailwindcss-ruby (4.1.11-arm64-darwin)
     tailwindcss-ruby (4.1.11-x86_64-linux-gnu)
     thor (1.4.0)
     timeout (0.4.3)
@@ -315,6 +320,7 @@ GEM
 
 PLATFORMS
   aarch64-linux
+  arm64-darwin
   ruby
   x86_64-linux
 
@@ -323,6 +329,7 @@ DEPENDENCIES
   brakeman
   capybara
   debug
+  foreman
   importmap-rails
   jbuilder
   pg
@@ -339,4 +346,4 @@ DEPENDENCIES
   web-console
 
 BUNDLED WITH
-   2.6.3
+   2.7.1
