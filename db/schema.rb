@@ -43,7 +43,7 @@ ActiveRecord::Schema[7.2].define(version: 2025_08_11_012456) do
   create_table "promos", force: :cascade do |t|
     t.string "code"
     t.string "product_code"
-    t.text "total_items"
+    t.text "total_items", default: [], array: true
     t.string "discount_type"
     t.text "description"
     t.decimal "discount_value"
