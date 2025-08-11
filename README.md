@@ -42,6 +42,12 @@ Things we are going to look into or ask about
 ●	Flexible structure that can be easily adapted for future changes 
 ● To make some changes to the code.
 
+## App Preview
+
+<img width="1037" height="355" alt="Screenshot 2025-08-11 at 3 52 55 PM" src="https://github.com/user-attachments/assets/758bcfa8-7762-4028-a99f-57b5be2a3431" />
+<img width="1920" height="1080" alt="Screenshot 2025-08-11 at 3 52 51 PM (2)" src="https://github.com/user-attachments/assets/50d0c7cf-4d9d-4090-9583-f59f62dff5d2" />
+<img width="2056" height="1329" alt="Screenshot 2025-08-11 at 3 52 51 PM" src="https://github.com/user-attachments/assets/6e54667a-e212-41fd-b8c0-32f1e0169b1c" />
+
 ## Setup & Start app
 ```
 bundle install
