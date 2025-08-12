@@ -51,7 +51,7 @@ group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem 'web-console'
   # RSpec for testing
-  gem 'rspec-rails', '~> 6.0'
+  gem 'rspec-rails', '~> 8.0'
 end
 
 group :test do
